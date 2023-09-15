@@ -1,0 +1,46 @@
+.bookListContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.foundResult {
+    margin: 25px 0;
+    font-weight: 600;
+}
+
+.booksList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.notFoundBook {
+    font-size: 30px;
+    font-style: italic;
+    text-shadow: 4px 3px 0 #fff, 9px 8px 0 rgba(0,0,0,0.15);
+}
+
+.btnLoadMore {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    background-color: #696969;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    &:hover {
+        background-color: #A0522D;
+    }
+}
+
+@media (max-width: 928px) {
+    .booksList {
+        justify-content: space-around;
+    }
+}
+
