@@ -5,14 +5,16 @@ const instance = axios.create({
     baseURL: "https://www.googleapis.com/books/v1/volumes",
 })
 
+const api_key = process.env.REACT_APP_API_KEY;
+
 export const searchBooksApi = {
    getBooks(searchSubstring: string, index: number, order: string, filter: string) {
        const category = filter === "all" ? "" : filter
 
-       return instance.get<ResponseType>(`?q=${searchSubstring}+subject:${category}&maxResults=${MAX_RESULT}&startIndex=${index * MAX_RESULT}&orderBy=${order}&key=${process.env.REACT_APP_API_KEY}`)
+       return instance.get<ResponseType>(`?q=${searchSubstring}+subject:${category}&maxResults=${MAX_RESULT}&startIndex=${index * MAX_RESULT}&orderBy=${order}&key=${api_key}`)
    },
     getDetailInfoBook(id: string) {
-       return instance.get<SearchBook>(`/${id}?key=${process.env.REACT_APP_API_KEY}`)
+       return instance.get<SearchBook>(`/${id}?key=${api_key}`)
     }
 }
 
